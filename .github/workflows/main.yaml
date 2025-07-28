@@ -1,0 +1,19 @@
+name: self-hosted CI
+
+on:
+  push:
+    branches: [main]
+
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+
+    - name: run test script
+      run: ./hello.sh
+
